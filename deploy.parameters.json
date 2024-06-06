@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "webAppName": {
-            "value": "Contact Database application"
+            "value": "GitHub-Copilot-Challenges"
         }
     }
 }

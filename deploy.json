@@ -1,40 +1,42 @@
 {
-  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
     // Define parameters for customization
-  },
+    },
   "variables": {
     // Define variables to simplify resource definitions
   },
-  "resources": [
+    "resources": [
     // Define the resources needed for your application
-    {
+        {
       "type": "Microsoft.Web/sites",
       "apiVersion": "2020-06-01",
-      "name": "[parameters('webAppName')]",
+            "name": "[parameters('webAppName')]",
       "location": "[resourceGroup().location]",
       "kind": "app",
       "properties": {
         "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('appServicePlanName'))]"
-      }
-    },
-    {
+            }
+        },
+        {
       "type": "Microsoft.Web/serverfarms",
       "apiVersion": "2020-06-01",
       "name": "[parameters('appServicePlanName')]",
       "location": "[resourceGroup().location]",
-      "properties": {
+            "properties": {
         "name": "[parameters('appServicePlanName')]",
         "sku": {
           "name": "F1",
           "tier": "Free"
-        }
-      }
-    }
+                        }
+                    ]
+                }
+            }
     // Add more resources as needed
   ],
   "outputs": {
     // Define outputs if needed
-  }
+        }
+    ]
 }

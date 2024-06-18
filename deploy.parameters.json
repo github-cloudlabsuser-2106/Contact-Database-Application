@@ -1,0 +1,29 @@
+"parameters": {
+  "webAppName": {
+    "type": "string",
+    "metadata": {
+      "description": "Contact Center App"
+    }
+  },
+  "appServicePlanName": {
+    "type": "string",
+    "metadata": {
+      "description": "The name of the App Service plan to use for hosting the web app."
+    }
+  },
+  "appServicePlanSKU": {
+    "type": "string",
+    "defaultValue": "F1",
+    "allowedValues": ["F1", "D1", "B1", "B2", "B3", "S1", "S2", "S3", "P1", "P2", "P3"],
+    "metadata": {
+      "description": "The pricing tier of the App Service plan."
+    }
+  },
+  "location": {
+    "type": "string",
+    "defaultValue": "[resourceGroup().location]",
+    "metadata": {
+      "description": "New York"
+    }
+  }
+}
